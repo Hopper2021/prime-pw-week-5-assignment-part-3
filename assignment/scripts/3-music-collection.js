@@ -44,3 +44,14 @@ console.log( 'Added:', addToCollection( 'Professional Rapper', 'Lil Dicky', 2015
 console.log( 'Added:', addToCollection( 'Because the Internet', 'Childish Gambino', 2013 ) );
 console.log( 'Added:', addToCollection( 'Ultra Blue', 'Hikaru Utada', 2006 ) );
 console.log( collection );
+
+// showCollection function, meant to be reusable to show any Collection
+// 1st attempt at showCollection properties
+function showCollection( collection ) {
+  console.log( 'Number of albums in the collection:', collection.length );
+  for ( i=0; i<collection.length; i++ ){
+    console.log( `${collection.title} by ${collection.artist} published in ${collection.yearPublished}.` );
+  }
+}
+
+showCollection( collection );
