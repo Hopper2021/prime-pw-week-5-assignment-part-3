@@ -55,3 +55,15 @@ function showCollection( collection ) {
 } // end showCollection
 
 showCollection( collection ); // test showCollection
+
+function findByArtist ( artist ) {
+  let result = [];
+  for ( i=0; i<collection.length; i++ ) {
+    if ( artist === i ) {
+      result.push( artist );
+      return result;
+    } // end if statement, push to result array and return result array
+  } return result; // return empty array
+} // end findByArtist
+
+findByArtist ( 'The Weeknd' );
