@@ -70,8 +70,13 @@ function findByArtist ( artist ) {
 console.log( 'Find artist (expects Clean Bandit twice):', findByArtist ( 'Clean Bandit' ) ); // testing findByArtist
 console.log( 'Find artist (expects empty array):',findByArtist ( 'UVERworld' ) ); // testing findByArtist
 
-function search( artist, yearPublished ) {
-
+function search( object ) {
+  for ( i=0; collection.length; i++ ) {
+    let result = [];
+    if ( object === collection[i].artist && object === collection[i].yearPublished) {
+      result.push( object );
+    }
+  } return result;
 }
 
 console.log(search({ artist: 'Ray Charles', year: 1957 }));
