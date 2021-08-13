@@ -38,12 +38,14 @@ function addToCollection( title, artist, yearPublished ) {
 // Adding 6 albums to get the 6 to test addToCollection
 console.log( 'Added the following albums to collection array:' );
 console.log( 'Added:', addToCollection( 'New Eyes', 'Clean Bandit', 2014 ) );
-console.log( 'Added:', addToCollection( 'Riot!', 'Paramore', 2007 ) );
+console.log( 'Added:', addToCollection( 'What is love?', 'Clean Bandit', 2007 ) );
 console.log( 'Added:', addToCollection( 'After Hours', 'The Weeknd', 2020 ) );
 console.log( 'Added:', addToCollection( 'Professional Rapper', 'Lil Dicky', 2015 ) );
 console.log( 'Added:', addToCollection( 'Because the Internet', 'Childish Gambino', 2013 ) );
 console.log( 'Added:', addToCollection( 'Ultra Blue', 'Hikaru Utada', 2006 ) );
 console.log( collection );
+
+console.log( 'Added:', addToCollection ( '', 'Ray Charles', 1957 ) ); // adding to test search function
 
 // showCollection function, meant to be reusable to show any Collection
 // 1st attempt at showCollection properties
@@ -59,11 +61,17 @@ showCollection( collection ); // test showCollection
 function findByArtist ( artist ) {
   let result = [];
   for ( i=0; i<collection.length; i++ ) {
-    if ( artist === i ) {
-      result.push( artist );
-      return result;
-    } // end if statement, push to result array and return result array
-  } return result; // return empty array
+    if ( artist === collection[i].artist ) {
+      result.push( artist ); // push artist into array
+    } // end if statement
+  } return result; // return array
 } // end findByArtist
 
-findByArtist ( 'The Weeknd' );
+console.log( 'Find artist (expects Clean Bandit twice):', findByArtist ( 'Clean Bandit' ) ); // testing findByArtist
+console.log( 'Find artist (expects empty array):',findByArtist ( 'UVERworld' ) ); // testing findByArtist
+
+function search( artist, yearPublished ) {
+
+}
+
+console.log(search({ artist: 'Ray Charles', year: 1957 }));
