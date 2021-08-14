@@ -45,8 +45,6 @@ console.log( 'Added:', addToCollection( 'Because the Internet', 'Childish Gambin
 console.log( 'Added:', addToCollection( 'Ultra Blue', 'Hikaru Utada', 2006 ) );
 console.log( collection );
 
-console.log( 'Added:', addToCollection ( '', 'Ray Charles', 1957 ) ); // adding to test search function
-
 // showCollection function, meant to be reusable to show any Collection
 // 1st attempt at showCollection properties
 function showCollection( collection ) {
@@ -73,10 +71,12 @@ console.log( 'Find artist (expects empty array):',findByArtist ( 'UVERworld' ) )
 function search( object ) {
   for ( i=0; collection.length; i++ ) {
     let result = [];
-    if ( object === collection[i].artist && object === collection[i].yearPublished) {
+    if ( {object}.artist === collection[i].artist && {object}.yearPublished === collection[i].yearPublished) {
       result.push( object );
     }
   } return result;
 }
 
-console.log(search({ artist: 'Ray Charles', year: 1957 }));
+console.log( 'Find Ray Charles (expects collection:)', search({ artist: 'Ray Charles', year: 1957 }));
+console.log( 'Added:', addToCollection ( '', 'Ray Charles', 1957 ) ); // adding to test search function
+console.log( 'Find Ray Charles (expects Ray Charles, 1957:)', search({ artist: 'Ray Charles', year: 1957 }));
