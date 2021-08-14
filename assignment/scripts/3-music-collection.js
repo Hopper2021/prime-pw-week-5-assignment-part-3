@@ -60,9 +60,9 @@ function findByArtist ( artist ) {
   let result = [];
   for ( i=0; i<collection.length; i++ ) {
     if ( artist === collection[i].artist ) {
-      result.push( artist ); // push artist into array
+      result.push( artist ); // push input parameter into array
     } // end if statement
-  } return result; // return array
+  } return result; // return array here to get all iterations of Clean Bandit(2)
 } // end findByArtist
 
 console.log( 'Find artist (expects Clean Bandit twice):', findByArtist ( 'Clean Bandit' ) ); // testing findByArtist
@@ -71,7 +71,7 @@ console.log( 'Find artist (expects empty array):',findByArtist ( 'UVERworld' ) )
 function search( object ) {
   for ( i=0; collection.length; i++ ) {
     let result = [];
-    if ( {object}.artist === collection[i].artist && {object}.yearPublished === collection[i].yearPublished) {
+    if ( {object} === collection[i].artist && {object} === collection[i].yearPublished) {
       result.push( object );
     }
   } return result;
