@@ -68,15 +68,17 @@ function findByArtist ( artist ) {
 console.log( 'Find artist (expects Clean Bandit twice):', findByArtist ( 'Clean Bandit' ) ); // testing findByArtist
 console.log( 'Find artist (expects empty array):',findByArtist ( 'UVERworld' ) ); // testing findByArtist
 
-function search( object ) {
+function search( searchArtist, searchYearPublished ) {
+  let result = [];
   for ( i=0; collection.length; i++ ) {
-    let result = [];
-    if ( {object} === collection[i].artist && {object} === collection[i].yearPublished) {
+    if ( searchArtist === collection[i].artist && searchYearPublished === collection[i].yearPublished) {
       result.push( object );
+    } else if (searchArtist != collection[i].artist && searchYearPublished != collection[i].yearPublished) {
+      return collection;
     }
   } return result;
 }
 
-console.log( 'Find Ray Charles (expects collection:)', search({ artist: 'Ray Charles', year: 1957 }));
+console.log( 'Find Ray Charles (expects collection):', search({ artist: 'Ray Charles', year: 1957 }));
 console.log( 'Added:', addToCollection ( '', 'Ray Charles', 1957 ) ); // adding to test search function
-console.log( 'Find Ray Charles (expects Ray Charles, 1957:)', search({ artist: 'Ray Charles', year: 1957 }));
+console.log( 'Find Ray Charles (expects Ray Charles, 1957):', search({ artist: 'Ray Charles', year: 1957 }));
