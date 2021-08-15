@@ -53,6 +53,6 @@ function search( object ) {
   } return collection; // if OBJECT is not found, returns collection
 } // end search function
 
-console.log( 'Find Ray Charles (expects collection):', search({ artist: 'Ray Charles', year: 1957 }) );
+console.log( 'Find Ray Charles (expects collection):', search({ artist: 'Ray Charles', year: 1957 }) ); // testing search function without Ray Charles added yet
 console.log( 'Added:', addToCollection ( 'Some song', 'Ray Charles', 1957 ) ); // adding to test search
-console.log( 'Find Ray Charles (expects Ray Charles, 1957):', search({ artist: 'Ray Charles', year: 1957 }) );
+console.log( 'Find Ray Charles (expects Ray Charles, 1957):', search({ artist: 'Ray Charles', year: 1957 }) ); // testing search function with newly added Ray Charles
