@@ -10,9 +10,11 @@ function addToCollection( title, artist, yearPublished, tracks = ["trackName", "
     return album;
   }
 
+
+
 // Adding 6 albums to get the 6 to test addToCollection
 console.log( 'Added the following albums to collection array:' );
-console.log( 'Added:', addToCollection( 'New Eyes', 'Clean Bandit', 2014, ['Real Love', 3.35], ['Higher', 2.54] ) );
+console.log( 'Added:', addToCollection( 'New Eyes', 'Clean Bandit', 2014, ['Real Love', 3.35] ) );
 console.log( 'Added:', addToCollection( 'What is love?', 'Clean Bandit', 2007 ) );
 console.log( 'Added:', addToCollection( 'After Hours', 'The Weeknd', 2020 ) );
 console.log( 'Added:', addToCollection( 'Professional Rapper', 'Lil Dicky', 2015 ) );
@@ -48,13 +50,15 @@ console.log( 'Find artist (expects empty array):',findByArtist ( 'UVERworld' ) )
 function search( object, trackName ) {
   let result = [];
   for (let i=0; i<collection.length; i++ ) {
-    if ( object.artist === collection[i].artist && object.year === collection[i].yearPublished ) {
+    if ( object.artist === collection[i].artist && object.year === collection[i].yearPublished || object.track === collection[i].trackName ) {
       result.push( object );
       return result; // jumps out of loop if OBJECT is found
     } // end if statement
   } return collection; // if OBJECT is not found, returns collection
 } // end search function
 
-console.log( 'Find Ray Charles (expects collection):', search({ artist: 'Ray Charles', year: 1957 }) ); // testing search function without Ray Charles added yet
+console.log( 'Search Ray Charles (expects collection):', search({ artist: 'Ray Charles', year: 1957 }) ); // testing search function without Ray Charles added yet
 console.log( 'Added:', addToCollection ( 'Some song', 'Ray Charles', 1957 ) ); // adding to test search
-console.log( 'Find Ray Charles (expects Ray Charles, 1957):', search({ artist: 'Ray Charles', year: 1957 }) ); // testing search function with newly added Ray Charles
+console.log( 'Search Ray Charles (expects Ray Charles, 1957):', search({ artist: 'Ray Charles', year: 1957 }) ); // testing search function with newly added Ray Charles
+
+console.log( 'Search Real Love track: (expects Real Love):', search({trackName: 'Real Love'}) ); // testing track addition to search function
